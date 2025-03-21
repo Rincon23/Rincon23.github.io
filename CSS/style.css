@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 ;
+    padding: 0;
+    color: rgb(93, 153, 194);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url("../Img/fundo-preto-background62-1024x576.webp") no-repeat center top fixed;
+    background-size: cover;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+header {
+    background-color: rgba(57, 57, 57, 0.8);
+    color:aliceblue;
+    padding: 10px 0px;
+    text-align: center;
+    height: 20px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+ul li a {
+    color: aliceblue;
+    text-decoration: none; 
+}
+
+main {
+    position: relative;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+}
+
+footer{
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0px;
+    margin-top: 20px;
+}
+
+section#home img {
+    max-width: 100px;
+    border-radius: 100px;
+
+}
