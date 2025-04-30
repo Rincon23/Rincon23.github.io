@@ -1,73 +1,68 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0 ;
-    padding: 0;
-    color: rgb(93, 153, 194);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    z-index: 1;
-}
-
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background: url("../Img/fundo-preto-background62-1024x576.webp") no-repeat center top fixed;
-    background-size: cover;
-    opacity: 0.8;
-    z-index: -1;
-}
-
-header {
-    background-color: rgba(57, 57, 57, 0.8);
-    color:aliceblue;
-    padding: 10px 0px;
-    text-align: center;
-    height: 20px;
-}
-
-ul {
-    list-style: none;
+/* Estilo geral */
+*{
     margin: 0;
     padding: 0;
-
+    box-sizing: border-box;
+    font-family: "Comic Relief", system-ui;
+}
+    
+body {
+    background-color: black;
+    height: 100vh;
 }
 
-ul li {
-    display: inline;
-    margin: 0 15px;
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
-ul li a {
-    color: aliceblue;
-    text-decoration: none; 
+/* Estilo do cabeçalho */
+
+header {
+    padding: 40px 4%;
 }
 
-main {
-    position: relative;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    max-width: 800px;
-    margin: auto;
+header > .interface{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-footer{
-    background-color: rgba(51, 51, 51, 0.8);
-    color: #fff;
-    text-align: center;
-    padding: 10px 0px;
-    margin-top: 20px;
+header a {
+    color: rgb(151, 151, 151);
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
 }
 
-section#home img {
-    max-width: 100px;
-    border-radius: 100px;
+header a:hover {
+    color: #80D8FF;
+    transform: scale(1.08);
+}
 
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.logo img {
+    width: 100px
+}
+
+header .btn-contato button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #80D8FF;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+header .btn-contato button hover {
+    box-shadow: 0 0 10px #1ba7e4;
 }
