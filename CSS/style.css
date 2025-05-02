@@ -8,12 +8,11 @@
     
 body {
     background-color: black;
-    height: 100vh;
 }
 
 .interface{
-    max-width: 1600px;
-    margin: 0 auto;
+    max-width: 1280px;
+    margin: auto
 }
 
 .flex {
@@ -34,6 +33,12 @@ body {
 .btn-contato button:hover {
     box-shadow: 0 0 10px #1ba7e4;
     transform: scale(1.05);
+}
+
+h2.titulo {
+    font-size: 30px;
+    color: #80D8FF;
+    margin-bottom: 20px;
 }
 /* Estilo do cabeçalho */
 
@@ -115,9 +120,107 @@ section.Topo-do-site .flex {
 
 @keyframes flutuar {
     0%{
-        top: 0;
+        top: 0px;
     }
     100%{
-        top: 30px;
+        top: 50px;
     }
+}
+
+section.Habilidades {
+    color: white;
+    padding: 40px 4%;
+}
+
+section.Habilidades h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    margin-left: 70px;
+}
+
+section.Habilidades h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.badgets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: px;
+  
+}
+
+.Habilidades-box {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    padding: 20px;
+    border-radius: 20px;
+    display: grid;
+    box-shadow: 0 0 10px #80D8FF;
+    transition: 0.2s;
+    margin: 20px;
+
+}
+
+.Habilidades-box:hover {
+    transform: scale(1.05);
+}
+
+.Habilidades-box img {
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+
+/* Estilo do Sobre */
+section.Sobre {
+    color: white;
+    padding: 40px 4%;
+}
+
+section.Sobre .flex {
+    align-items: center;
+    gap: 90px;
+}
+
+.txt-sobre h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    line-height: 45px;
+    
+}
+
+.txt-sobre h2 span {
+    color: #80D8FF;
+    display: block;
+    
+}
+
+.txt-sobre p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.img-sobre img {
+    width: 500px;
+    height: auto;
+    border-radius: 20px;
+   
+}
+
+.icones-contato button {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    background-color: #80D8FF;
+    font-size: 40px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: 0 5px;
+}
+
+.icones-contato button:hover {
+        box-shadow: 0 0 10px #1ba7e4;
+        transform: scale(1.05);
 }
