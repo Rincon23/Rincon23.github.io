@@ -146,20 +146,20 @@ section.Habilidades h2 {
 .badgets {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-top: px;
+    gap: 10px;
   
 }
 
 .Habilidades-box {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     padding: 20px;
     border-radius: 20px;
-    display: grid;
     box-shadow: 0 0 10px #80D8FF;
     transition: 0.2s;
     margin: 20px;
-
+    min-width: 300px;
+    max-width: 300px;
 }
+
 
 .Habilidades-box:hover {
     transform: scale(1.05);
@@ -168,6 +168,11 @@ section.Habilidades h2 {
 .Habilidades-box img {
     border-radius: 20px;
     margin-bottom: 10px;
+}
+
+.Habilidades .interface .flex {
+    align-items: top;
+    gap: 9px;
 }
 
 
