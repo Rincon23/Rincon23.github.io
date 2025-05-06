@@ -133,9 +133,9 @@ section.Habilidades {
 }
 
 section.Habilidades h1 {
-    font-size: 35px;
+    font-size: 50px;
     margin-bottom: 20px;
-    margin-left: 70px;
+    margin-left: 25px;
 }
 
 section.Habilidades h2 {
@@ -150,12 +150,16 @@ section.Habilidades h2 {
   
 }
 
+.Habilidades .interface .flex {
+    align-items: top;
+    justify-content: space-around;
+}
+
 .Habilidades-box {
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 10px #80D8FF;
     transition: 0.2s;
-    margin: 20px;
 }
 
 
@@ -168,10 +172,7 @@ section.Habilidades h2 {
     margin-bottom: 10px;
 }
 
-.Habilidades .interface .flex {
-    align-items: top;
-    gap: 9px;
-}
+
 
 
 /* Estilo do Sobre */
@@ -226,4 +227,75 @@ section.Sobre .flex {
 .icones-contato button:hover {
         box-shadow: 0 0 10px #1ba7e4;
         transform: scale(1.05);
+}
+
+section.portifolio {
+    padding: 80px 4%;
+}
+
+section.portifolio .flex {
+    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
+    gap: 90px;
+}
+
+.titulo-port {
+    font-size: 50px;
+    margin-bottom: 90px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.img-port{
+    width: 360px;
+    height: 460px;
+    background-size: cover;
+    border-radius: 20px;
+    background-position: 100% 0%;
+    cursor: pointer;
+    transition: background-position 10s;
+    position: relative;
+    
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    opacity: 0;
+    
+}
+
+.overlay:hover {
+    opacity: 1;
+    transition: 1.5s;
+}
+
+.img-port:hover {
+    background-position: 100% 100%;
+}
+
+.img-port-embreve {
+    width: 360px;
+    height: 460px;
+    background-size: cover;
+    border-radius: 20px;
+    background-position: 100% 0%;
+    cursor: pointer;
+    transition: background-position 10s;
+    position: relative;
+}
+
+.img-port-embreve:hover {
+    background-position: 100% 100%;
 }
