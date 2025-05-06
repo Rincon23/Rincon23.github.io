@@ -149,13 +149,17 @@
         <section class="formulario">
             <div class="interface">
                 <h2 class="titulo-port">FALA <span>COMIGO!</span></h2>
-                <form method="post" action="enviar.php">
-                    <input type="text" name="nome" id="" placeholder = "Seu nome:" required>
-                    <input type="email" name="email" id="" placeholder="Seu e-mail:" required>
-                    <input type="text" name="celular" id="" placeholder="Seu Celular:" required>
-                    <textarea name="mensagem" id="" placeholder="Sua mensagem:" required></textarea>
+                <form action="https://formsubmit.co/enzorincon2003@gmail.com" method="POST">
+                    <input type="text" name="nome" placeholder="Seu nome:" required>
+                    <input type="email" name="email" placeholder="Seu e-mail:" required>
+                    <input type="text" name="celular" placeholder="Seu Celular:" required>
+                    <textarea name="mensagem" placeholder="Sua mensagem:" required></textarea>
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://rincon23.github.io/">
+                
                     <button type="submit">Enviar</button>
-                </form>"
+                </form>
+                
 
             </div>
         </section>
