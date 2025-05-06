@@ -150,14 +150,13 @@
             <div class="interface">
                 <h2 class="titulo-port">FALA <span>COMIGO!</span></h2>
                 <form action="https://formsubmit.co/enzorincon2003@gmail.com" method="POST">
-                    <input type="text" name="nome" placeholder="Seu nome:" required>
-                    <input type="email" name="email" placeholder="Seu e-mail:" required>
-                    <input type="text" name="celular" placeholder="Seu Celular:" required>
-                    <textarea name="mensagem" placeholder="Sua mensagem:" required></textarea>
+                    <input type="text" name="nome" placeholder="Seu nome completo:" required autocomplete="off">
+                    <input type="email" name="email" placeholder="Seu e-mail:" required autocomplete="off">
+                    <input type="text" name="celular" placeholder="Seu Celular:" required autocomplete="off">
+                    <textarea name="mensagem" placeholder="Sua mensagem:" required autocomplete="off"></textarea>
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://rincon23.github.io/">
-                
-                    <button type="submit">Enviar</button>
+                    <button class="btn-enviar" type="submit">Enviar</button>
                 </form>
                 
 

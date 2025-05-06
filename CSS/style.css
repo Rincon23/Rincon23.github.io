@@ -240,6 +240,16 @@ section.portifolio .flex {
     gap: 90px;
 }
 
+h2.titulo-port {
+    font-size: 50px;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.titulo-port span {
+    color: #80D8FF;
+}
+
 .titulo-port {
     font-size: 50px;
     margin-bottom: 90px;
@@ -305,6 +315,14 @@ section.formulario {
     padding: 80px 4%;
 }
 
+.formulario .titulo {
+    font-size: 50px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
 form {
     max-width: 500px;
     margin: 0 auto;
@@ -316,9 +334,46 @@ form {
 
 form input {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.555);
+    background-color: rgb(44, 44, 44);
     border: none;
     outline: none;
-    padding: auto;
+    padding: 20px;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+form textarea {
+    width: 100%;
+    background-color: rgb(44, 44, 44);
+    border: none;
+    outline: none;
+    padding: 20px;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 20px;
+    resize: none;
+    height: 200px;
+}
+
+form button {
+    padding: 10px 40px;
+    font-size: 23px;
+    font-weight: 1000;
+    background-color: #80D8FF;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: 0.2s;
+    width: 45%;
+    height: 60px;	
+    align-self: center;
+
+}
+
+form button:hover {
+    box-shadow: 0 0 10px #1ba7e4;
+    transform: scale(1.05);
 }
 
