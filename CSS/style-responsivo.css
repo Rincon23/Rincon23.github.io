@@ -221,6 +221,15 @@
         height: auto;
     }
 
+    /* Habilidades */
+
+    .Habilidades .interface h1 {
+        font-size: 22px;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
    /* Sobre */
 
     .txt-sobre h2 {
