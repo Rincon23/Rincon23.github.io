@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>.:: Portifólio Web ::.</title>
     <link href="./CSS/style.css" rel="stylesheet">
+    <link href="./CSS/style-responsivo.css" rel="stylesheet">
     <!-- Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +14,8 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Fim Bootstrap Icons -->
+
+    <script src="menu.js" defer></script>
 </head>
 <body>
     <header>
@@ -36,6 +39,27 @@
                     <button>Contato</button>
                 </a>
             </div>
+
+            <div class="btn-abrir-menu" id="btn-abrir-menu">
+                <i class="bi bi-list"></i>
+            </div>
+
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar">
+                    <i class="bi bi-x"></i>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Habilidades</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Portifólio</a></li>
+                        <li><a href="#">Contato</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+            <div class="overlay-menu" id="overlay-menu"></div>
         </div>
     </header>
 
@@ -46,17 +70,11 @@
                     <div class="Txt-topo-site">
                         <h1>Programar é desenhar o futuro com linhas de pensamento</h1>
                         <p>A capacidade da programação de transformar ideias abstratas em soluções concretas, é uma ferramenta poderosa para transformar conceitos intangíveis em algo prático e funcional.</p>
-                        
-                        <div class = "btn-contato">
-                            <a href="#">
-                                <button>Entre em contato</button>
-                            </a>
-                        </div>
                     </div>
 
-                        <div class="img-topo-site">
-                            <img src="./Img/ImagemNotebook.png" class="img-notebook" alt="Imagem de um notebook com código">
-                        </div>
+                    <div class="img-topo-site">
+                        <img src="./Img/ImagemNotebook.png" class="img-notebook" alt="Imagem de um notebook com código">
+                    </div>
                 </div>
             </div>
         </section>
@@ -69,33 +87,33 @@
                     <div class="Habilidades-box">
                         <h2>💻 Linguagens</h2>
                         <div class="badgets">
-                            <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-                            <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white">
+                            <p><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"></p>
+                            <p><img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white"></p>
                         </div>
                     </div>
                     <div class="Habilidades-box">
                         <h2>🌐 Web</h2>
                         <div class="badgets">
-                            <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-                            <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-                            <img src="https://img.shields.io/badge/Flask-202020?style=for-the-badge&logo=flask&logoColor=white">
+                            <p><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"></p>
+                            <p><img src="https://img.shields.io/badge/Flask-202020?style=for-the-badge&logo=flask&logoColor=white"></p>
+                            <p><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"></p>
                         </div>
                     </div>
                     <div class="Habilidades-box">
                         <h2>📦 Banco de Dados</h2>
                         <div class="badgets">
-                            <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white">
-                            <img src="https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft&logoColor=white">
+                            <p><img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white"></p>
+                            <p><img src="https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft&logoColor=white"></p>
 
                         </div>
                     </div>
                     <div class="Habilidades-box">
                         <h2>🛠️ Ferramentas</h2>
                         <div class="badgets">
-                            <img src="https://img.shields.io/badge/Google_Drive-00bfff?style=for-the-badge&logo=GoogleDrive&logoColor=white"> 
-                            <img src="https://img.shields.io/badge/ChatGPT-00A67E?style=for-the-badge&logo=openai&logoColor=white"> 
-                            <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"> 
-                            <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
+                            <p><img src="https://img.shields.io/badge/Google_Drive-00bfff?style=for-the-badge&logo=GoogleDrive&logoColor=white"> </p>
+                            <p><img src="https://img.shields.io/badge/ChatGPT-00A67E?style=for-the-badge&logo=openai&logoColor=white"> </p>
+                            <p><img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"> </p>
+                            <p><img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white"></p>
                         </div>
                     </div>
                 </div>
@@ -111,7 +129,7 @@
                     <div class="txt-sobre">
                         <h2>Muito Prazer,<span>Sou Enzo Rincon.</span></h2>
                         <p>Sempre tive o sonho de trabalhar com tecnologia, especialmente na área de programação. Estou tornando isso realidade por meio de estudos e prática com desenvolvimento de sistemas. Tenho familiaridade com lógica de programação, automação, suporte técnico.</p>
-                        <p>Atualmente, curso Ciência da Computação e busco oportunidades para crescer profissionalmente na área de desenvolvimento, contribuindo com soluções práticas e aprendendo constantemente.
+                        <p>Atualmente, curso Ciências da Computação e busco oportunidades para crescer profissionalmente na área de desenvolvimento, contribuindo com soluções práticas e aprendendo constantemente.
 
                         </p>
 
@@ -163,6 +181,33 @@
             </div>
         </section>
     </main>  
+
+    <footer>
+        <div class="interface">
+                <div class="line-footer">
+                    <div class="flex">
+                        <div class="logo-footer">
+                            <img src="./Img/Logo.png" alt="Logo do Portifólio"></a>
+                        </div>
+                        <div class="icones-contato">
+                            <a href="#"><button><i class="bi bi-instagram"></i></button></a>
+                            <a href="#"><button><i class="bi bi-linkedin"></i></button></a>
+                            <a href="#"><button><i class="bi bi-github"></i></button></a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="line-footer-borda">
+                <div class="txt-footer">
+                    <p>Desenvolvido por Enzo Rincon</p>
+                    <p><i class="bi bi-envelope-fill"></i> <a href="mailto:enzorincon2003@gmail.com">enzorincon2003@gmail.com</a> </p>
+                </div>
+                    
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
 

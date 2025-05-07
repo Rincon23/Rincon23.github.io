@@ -52,23 +52,23 @@ header > .interface{
     align-items: center;
 }
 
-header a {
+header .Menu a {
     color: rgb(151, 151, 151);
     text-decoration: none;
     display: inline-block;
     transition: .2s;
 }
 
-header a:hover {
+.Menu a:hover {
     color: #80D8FF;
     transform: scale(1.08);
 }
 
-header nav ul {
+header nav.Menu ul {
     list-style: none;
 }
 
-header nav ul li {
+header nav.Menu ul li {
     display: inline-block;
     margin-left: 20px;
 }
@@ -152,14 +152,17 @@ section.Habilidades h2 {
 
 .Habilidades .interface .flex {
     align-items: top;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .Habilidades-box {
+    flex: 1;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 10px #80D8FF;
     transition: 0.2s;
+    gap: 20px;
 }
 
 
@@ -231,6 +234,7 @@ section.Sobre .flex {
 
 section.portifolio {
     padding: 80px 4%;
+    box-shadow: 0 0 40px 10px #80d9ff3d;
 }
 
 section.portifolio .flex {
@@ -369,11 +373,56 @@ form button {
     width: 45%;
     height: 60px;	
     align-self: center;
-
 }
 
 form button:hover {
     box-shadow: 0 0 10px #1ba7e4;
     transform: scale(1.05);
 }
+
+footer {
+    padding: 40px 4%;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 40px 10px #80d9ff3d;
+}
+
+footer .flex {
+    justify-content: space-between;
+}
+
+.line-footer {
+    padding: 20px 0;
+}
+
+.logo-footer img {
+    width: 80px;
+    height: auto;
+    transition: 0.2s;
+    padding: 0;
+    margin: 0;
+}
+
+.logo-footer img:hover {
+    transform: scale(1.05);
+}
+
+.line-footer-borda {
+    border-top: #80D8FF 3px solid;
+}
+
+.txt-footer {
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.txt-footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #ffffff;
+}
+
 
