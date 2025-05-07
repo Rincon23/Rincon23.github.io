@@ -162,6 +162,14 @@
 }
 
 @media screen and (max-width: 620px) {
+
+    .img-topo-site img {
+        display: block;
+        margin: 0 auto; 
+        width: 90%; 
+        height: auto;
+    }
+
     .Habilidades .interface .flex {
         display: grid;
         gap: 20px;
@@ -176,6 +184,13 @@
         height: 100%;
         width: 100%;
         
+    }
+
+    .Habilidades .interface h1 {
+        font-size: 22px;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 20px;
     }
 
     .badgets {
