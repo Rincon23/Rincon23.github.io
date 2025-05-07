@@ -160,3 +160,91 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 620px) {
+    .Habilidades .interface .flex {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: stretch;
+    }
+
+    .Habilidades-box {
+        text-align: center;
+        width: min-content;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        
+    }
+
+    .badgets {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-content: center;
+        text-align: center;
+        gap: 10px;
+        
+    }
+
+    .img-sobre img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    
+    /* Topo do site */
+    .Txt-topo-site {
+        display: block;
+        margin: 0 auto; 
+        text-align: center;
+        width: 90%; 
+        height: auto;
+    }
+    
+    .Txt-topo-site h1 {
+        font-size: 25px;
+        line-height: 28px;
+    }
+
+    .Txt-topo-site p {
+        font-size: 15px;
+    }
+
+    .img-topo-site img {
+        display: block;
+        margin: 0 auto; 
+        width: 90%; 
+        height: auto;
+    }
+
+   /* Sobre */
+
+    .txt-sobre h2 {
+        font-size: 40px;
+    }
+
+    .txt-sobre h2 span {
+        font-size: 35px;
+    }
+
+    .icones-contato {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+     /* Portifolio */
+
+    .portifolio h2 {
+        font-size: 35px;
+    }
+
+     .img-port, .img-port-embreve {
+        width: 300px;
+        height: 400px;
+    }
+}
