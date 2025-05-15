@@ -141,6 +141,7 @@ section.Habilidades h1 {
 section.Habilidades h2 {
     font-size: 25px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .badgets {
@@ -148,6 +149,10 @@ section.Habilidades h2 {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   
+}
+
+.badgets p {
+    text-align: center;
 }
 
 .Habilidades .interface .flex {
