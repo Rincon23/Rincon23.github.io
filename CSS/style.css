@@ -5,6 +5,10 @@
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
+
+a {
+    text-decoration: none;
+}
     
 body {
     background-color: black;
@@ -219,8 +223,11 @@ section.Sobre .flex {
     border-radius: 20px;
    
 }
+.icones-contato {
+    display: flex;
+}
 
-.icones-contato button {
+.icones-contato button.btn-normal {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -235,6 +242,27 @@ section.Sobre .flex {
 .icones-contato button:hover {
         box-shadow: 0 0 10px #1ba7e4;
         transform: scale(1.05);
+}
+
+.icones-contato button.btn-curriculo i {
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+.icones-contato button.btn-curriculo {
+    width: auto;
+    height: 70px;
+    border-radius: 20px;
+    border: none;
+    background-color: #80D8FF;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: 0 5px;
+    margin-left: 30px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
 }
 
 section.portifolio {
