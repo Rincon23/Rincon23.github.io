@@ -258,15 +258,24 @@
     .icones-contato {
         display: flex;
         justify-content: center;
-        gap: 10px;
+        gap: 5px;
     }
 
     .btn-normal {
-
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 25px !important;
     }
 
     .btn-curriculo {
         margin-left: 10px !important;
+        
+        height: 50px !important;
+        font-size: 20px !important;
+    }
+
+    .btn-curriculo i {
+        font-size: 25px !important;
     }
 
     
