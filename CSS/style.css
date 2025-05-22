@@ -105,6 +105,11 @@ section.Topo-do-site .flex {
     font-size: 35px;
     line-height: 40px;
 }
+
+.Txt-topo-site h1 span {
+    color: #80D8FF;
+}
+
 .Txt-topo-site p {
     color: #ffffff;
     justify-content: center ;
