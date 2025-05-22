@@ -221,12 +221,13 @@
     }
     
     .Txt-topo-site h1 {
-        font-size: 25px;
-        line-height: 28px;
+        font-size: 35px;
+        line-height: 35px;
     }
 
     .Txt-topo-site p {
-        font-size: 15px;
+        font-size: 20px;
+        text-align: justify;
     }
 
     .img-topo-site img {
