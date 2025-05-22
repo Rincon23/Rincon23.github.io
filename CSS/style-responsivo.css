@@ -258,8 +258,17 @@
     .icones-contato {
         display: flex;
         justify-content: center;
-        gap: 20px;
+        gap: 10px;
     }
+
+    .btn-normal {
+
+    }
+
+    .btn-curriculo {
+        margin-left: 10px !important;
+    }
+
     
      /* Portifolio */
 
