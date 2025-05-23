@@ -286,8 +286,13 @@
         font-size: 35px;
     }
 
+    section.portifolio .flex {
+    display: flex;
+    flex-direction: column;
+}
+
      .img-port, .img-port-embreve {
-        width: 300px;
+        width: 100%;
         height: 400px;
     }
 }

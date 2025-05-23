@@ -270,15 +270,17 @@ section.Sobre .flex {
     align-items: center;
 }
 
+/*Portifólio*/
+
 section.portifolio {
     padding: 80px 4%;
     box-shadow: 0 0 40px 10px #80d9ff3d;
 }
 
 section.portifolio .flex {
-    justify-content: space-between;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: top;
     gap: 90px;
 }
 
@@ -299,8 +301,14 @@ h2.titulo-port {
     text-align: center;
 }
 
+.borda-port {
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0 0 40px 10px #80d9ff3d;
+}
+
 .img-port{
-    width: 360px;
+    width: 100%;
     height: 460px;
     background-size: cover;
     border-radius: 20px;
@@ -308,6 +316,7 @@ h2.titulo-port {
     cursor: pointer;
     transition: background-position 10s;
     position: relative;
+    aspect-ratio: 3 / 4;
     
 }
 
@@ -338,7 +347,7 @@ h2.titulo-port {
 }
 
 .img-port-embreve {
-    width: 360px;
+    width: 100%;
     height: 460px;
     background-size: cover;
     border-radius: 20px;
@@ -350,6 +359,45 @@ h2.titulo-port {
 
 .img-port-embreve:hover {
     background-position: 100% 100%;
+}
+
+.tec-utilizadas-port {
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.tec-utilizadas-port .badgets-port {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
+}
+
+.tec-utilizadas-port .badgets-port > *:nth-last-child(1):nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-left: 0;
+}
+
+.tec-utilizadas-port p {
+    text-align:justify;
+    margin-top: 8px;
+    
+}
+
+.tec-utilizadas-port p img {
+    border-radius: 20px;
+    align-self: center;
+}
+
+.tec-utilizadas-port .badgets-port p:nth-child(odd) {
+    text-align: right;
+    margin-right: 10px;
+}
+
+.tec-utilizadas-port .badgets-port p:nth-child(even) {
+    text-align: left;
+    margin-left: 10px;
 }
 
 
