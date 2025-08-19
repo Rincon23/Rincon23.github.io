@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.flex{
+    display: flex;
+}
+
+body {
+    background-color: gray;
+    font: normal 15pt Arial;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+section{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    color: black;
+    box-shadow: 5px 5px 10px black;
+    text-align: center;
+}
+
+.principal .flex {
+    flex-direction: column;
+}
+
+
+
+.agora {
+    text-align: center;
+    
+}
+
+
+
+#img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 25px;
+}
+
+#boa {
+    font-size: 25px;
+    font-weight: 600;
+
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+}
