@@ -346,21 +346,6 @@ h2.titulo-port {
     background-position: 100% 100%;
 }
 
-.img-port-embreve {
-    width: 100%;
-    height: 460px;
-    background-size: cover;
-    border-radius: 20px;
-    background-position: 100% 0%;
-    cursor: pointer;
-    transition: background-position 10s;
-    position: relative;
-}
-
-.img-port-embreve:hover {
-    background-position: 100% 100%;
-}
-
 .tec-utilizadas-port {
     color: white;
     display: flex;
@@ -400,6 +385,127 @@ h2.titulo-port {
     margin-left: 10px;
 }
 
+/*Cursos*/
+section.cursos {
+    padding: 80px 4%;
+    box-shadow: 0 0 40px 10px #80d9ff3d;
+}
+
+section.cursos .flex {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: top;
+    gap: 90px;
+}
+
+h2.titulo-cursos {
+    font-size: 50px;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.titulo-cursos span {
+    color: #80D8FF;
+}
+
+.titulo-cursos {
+    font-size: 50px;
+    margin-bottom: 90px;
+    color: #ffffff;
+    text-align: center;
+}
+
+h1.sub-titulo-cursos {
+    font-size: 50px;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.sub-titulo-cursos {
+    font-size: 50px;
+    margin-bottom: 90px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.borda-cursos {
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0 0 40px 10px #80d9ff3d;
+}
+
+.img-cursos{
+    width: 100%;
+    height: 460px;
+    background-size: cover;
+    border-radius: 20px;
+    position: relative;
+    aspect-ratio: 3 / 4;
+    
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    opacity: 0;
+    
+}
+
+.overlay:hover {
+    opacity: 1;
+    transition: 1.5s;
+}
+
+.tec-utilizadas-cursos {
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.tec-utilizadas-cursos .badgets-cursos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
+}
+
+.tec-utilizadas-cursos .badgets-cursos > *:nth-last-child(1):nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-left: 0;
+}
+
+.tec-utilizadas-cursos p {
+    text-align:justify;
+    margin-top: 8px;
+    
+}
+
+.tec-utilizadas-cursos p img {
+    border-radius: 20px;
+    align-self: center;
+}
+
+.tec-utilizadas-cursos .badgets-cursos p:nth-child(odd) {
+    text-align: right;
+    margin-right: 10px;
+}
+
+.tec-utilizadas-cursos .badgets-cursos p:nth-child(even) {
+    text-align: left;
+    margin-left: 10px;
+}
+
+/*Formulário*/
 
 section.formulario {
     padding: 80px 4%;
