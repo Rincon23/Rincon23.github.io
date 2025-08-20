@@ -1,0 +1,37 @@
+body {
+    background-color: rgb(148, 148, 148);
+    align-items: center; 
+    display: flex;
+    flex-direction: column;
+    
+}
+
+h1 {
+    color: rgb(0, 0, 0)
+}
+
+section {
+    background-color: white;
+    width: 500px;
+    height: auto;
+    min-height: 400px;
+    border-radius: 25px;
+    padding: 20px;
+    
+}
+
+.adicionar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.div1{
+    text-align: left;
+}
+
+select#flista {
+    width: 150px;
+}
+
+
+

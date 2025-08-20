@@ -1,0 +1,49 @@
+*{
+    margin: 5px;
+    padding: 0px;
+}
+
+body {
+    background-color: rgb(74, 175, 233);
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+}
+
+section {
+    justify-content: center;
+    display: flex;
+    
+    
+}
+
+.janela {
+    background-color: #fff;
+    color: black;
+    border-radius: 30px;
+    width: 400px;
+    height: auto;
+    box-shadow: 5px 5px 10px black;
+    text-align: center;
+
+}
+
+p {
+    margin: 10px;
+    font-size: 20px;
+}
+
+
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    
+}
+
+
+option {
+    margin: 0
+}

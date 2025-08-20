@@ -1,3 +1,7 @@
+#teste {
+    background-color: red;
+}
+
 body {
     background-color: #121212;
     color: white;
@@ -17,30 +21,57 @@ h1 {
     color: #ffffff;
     font-size: 60px;
     line-height: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 span {
-    color: #80D8FF;
+    color: #FFD020;
+}
+
+.container-repositorio {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .links-container {
-    max-width: 100%;
-    height: 100%;
     margin: auto;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 0 40px 10px #80d9ff3d;
+    box-shadow: 0 0 40px 10px #FFD020;
+}
+
+#cor-do-botao-repositorio {
+    color: #FFD020;
+    border-color: #FFD020;
+}
+
+#cor-do-botao-repositorio:hover {
+    color: #ffffff;
+    background-color: #FFD020;
 }
 
 .container {
-    margin: 20px;
+    margin: auto;
+    margin-bottom: 20px;
 }
 
-
-
+.row {
+    margin-bottom: 20px;
+}
 
 @media screen and (max-width: 500px) {
     h1 {
         font-size: 40px
+    }
+
+    .row {
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+
+    .col  {
+        margin-bottom: 20px;
+        size: 30%;
     }
 }
