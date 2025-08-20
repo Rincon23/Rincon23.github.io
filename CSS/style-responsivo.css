@@ -311,4 +311,8 @@
         width: 100%;
         height: 400px;
     }
+
+    h1.sub-titulo-cursos {
+    font-size: 30px;
+}
 }
