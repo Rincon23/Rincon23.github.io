@@ -280,18 +280,18 @@
     }
 
     
-     /* Portifolio */
+     /* Projeto */
 
-    .portifolio h2 {
+    .projeto h2 {
         font-size: 35px;
     }
 
-    section.portifolio .flex {
+    section.projeto .flex {
     display: flex;
     flex-direction: column;
     }
 
-     .img-port {
+     .img-projeto {
         width: 100%;
         height: 400px;
     }
