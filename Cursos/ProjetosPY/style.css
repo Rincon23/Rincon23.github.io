@@ -1,0 +1,77 @@
+#teste {
+    background-color: red;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+    padding: 2rem;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: auto
+}
+
+.flex {
+    display: flex;
+}	
+
+h1 {
+    color: #ffffff;
+    font-size: 60px;
+    line-height: 40px;
+    margin-bottom: 60px;
+}
+span {
+    color: #1564A9;
+}
+
+.container-repositorio {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.links-container {
+    margin: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 40px 10px #1564A9;
+}
+
+#cor-do-botao-repositorio {
+    color: #1564A9;
+    border-color: #1564A9;
+}
+
+#cor-do-botao-repositorio:hover {
+    color: #ffffff;
+    background-color: #1564A9;
+}
+
+.container {
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 40px
+    }
+
+    .row {
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+
+    .col  {
+        margin-bottom: 20px;
+        size: 30%;
+    }
+}
