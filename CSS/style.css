@@ -270,44 +270,44 @@ section.Sobre .flex {
     align-items: center;
 }
 
-/*Portifólio*/
+/*Projeto*/
 
-section.portifolio {
+section.projeto {
     padding: 80px 4%;
     box-shadow: 0 0 40px 10px #80d9ff3d;
 }
 
-section.portifolio .flex {
+section.projeto .flex {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: top;
     gap: 90px;
 }
 
-h2.titulo-port {
+h2.titulo-projeto {
     font-size: 50px;
     color: #ffffff;
     margin-bottom: 25px;
 }
 
-.titulo-port span {
+.titulo-projeto span {
     color: #80D8FF;
 }
 
-.titulo-port {
+.titulo-projeto {
     font-size: 50px;
     margin-bottom: 90px;
     color: #ffffff;
     text-align: center;
 }
 
-.borda-port {
+.borda-projeto {
     border-radius: 20px;
     padding: 5px;
     box-shadow: 0 0 40px 10px #80d9ff3d;
 }
 
-.img-port{
+.img-projeto{
     width: 100%;
     height: 460px;
     background-size: cover;
@@ -342,45 +342,45 @@ h2.titulo-port {
     transition: 1.5s;
 }
 
-.img-port:hover {
+.img-projeto:hover {
     background-position: 100% 100%;
 }
 
-.tec-utilizadas-port {
+.tec-utilizadas-projeto {
     color: white;
     display: flex;
     flex-direction: column;
 }
 
-.tec-utilizadas-port .badgets-port {
+.tec-utilizadas-projeto .badgets-projeto {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-flow: dense;
 }
 
-.tec-utilizadas-port .badgets-port > *:nth-last-child(1):nth-child(odd) {
+.tec-utilizadas-projeto .badgets-projeto > *:nth-last-child(1):nth-child(odd) {
     grid-column: 1 / -1;
     justify-self: center;
     margin-left: 0;
 }
 
-.tec-utilizadas-port p {
+.tec-utilizadas-projeto p {
     text-align:justify;
     margin-top: 8px;
     
 }
 
-.tec-utilizadas-port p img {
+.tec-utilizadas-projeto p img {
     border-radius: 20px;
     align-self: center;
 }
 
-.tec-utilizadas-port .badgets-port p:nth-child(odd) {
+.tec-utilizadas-projeto .badgets-projeto p:nth-child(odd) {
     text-align: right;
     margin-right: 10px;
 }
 
-.tec-utilizadas-port .badgets-port p:nth-child(even) {
+.tec-utilizadas-projeto .badgets-projeto p:nth-child(even) {
     text-align: left;
     margin-left: 10px;
 }
