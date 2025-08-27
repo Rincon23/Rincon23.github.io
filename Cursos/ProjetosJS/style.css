@@ -2,10 +2,15 @@
     background-color: red;
 }
 
+.btn-voltar i {
+    color:#FFD020;
+    position: fixed;
+    font-size: 50px;
+}
+
 body {
     background-color: #121212;
     color: white;
-    padding: 2rem;
 }
 
 .interface{
