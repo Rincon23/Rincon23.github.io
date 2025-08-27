@@ -2,13 +2,6 @@
     background-color: red;
 }
 
-.btn-voltar i {
-    color:#1564A9;
-    position: fixed;
-    margin-left: 20px;
-    font-size: 50px;
-}
-
 body {
     background-color: #121212;
     color: white;
@@ -17,6 +10,19 @@ body {
 .interface{
     max-width: 1280px;
     margin: auto
+}
+
+.btn-voltar i {
+    color:#1564A9;
+    position: fixed;
+    margin-left: 70px;
+    font-size: 50px;
+    border-radius: 50%;
+}
+
+.btn-voltar i:hover {
+    box-shadow: 0 0 10px #1564A9;
+    transform: scale(1.05);
 }
 
 .flex {
