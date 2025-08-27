@@ -6,6 +6,7 @@
     color:#FFD020;
     position: fixed;
     font-size: 50px;
+    margin-left: 20px;
 }
 
 body {
@@ -32,18 +33,18 @@ span {
     color: #FFD020;
 }
 
+.links-container {
+    margin: 0px 50px 0px 50px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 40px 10px #FFD020;
+}
+
 .container-repositorio {
     padding: 20px;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-}
-
-.links-container {
-    margin: auto;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 0 40px 10px #FFD020;
 }
 
 #cor-do-botao-repositorio {
