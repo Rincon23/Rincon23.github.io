@@ -1,0 +1,73 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #121212;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 60px;
+    line-height: 40px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+h2 {
+    color: #ffffff;
+    text-align: center;
+}
+
+span {
+    color: #1564A9;
+}
+
+.exercicio {
+    margin: 30px 50px 30px 50px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 40px 10px #1564A9;
+    padding: 30px;
+}
+
+textarea {
+    width: 90%;
+    background-color: rgb(44, 44, 44);
+    padding: 20px;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 20px;
+    resize: none;
+    overflow: auto;
+    margin: 10px;
+    outline: none;
+
+    /* força o recorte arredondado */
+    -webkit-clip-path: inset(0 round 20px);
+    clip-path: inset(0 round 20px);
+}
+
+
+button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #1564A9;
+    border-color: #1564A9;
+    border-radius: 20px;
+    background-color: #121212;
+}
+
+button:hover {
+    box-shadow: 0 0 10px #1564A9;
+    transform: scale(1.05);
+}
+
+.resultado {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 20px;
+}
+

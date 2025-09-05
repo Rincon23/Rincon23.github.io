@@ -53,6 +53,9 @@ span {
     margin-bottom: 20px;
 }
 
+.container-repositorio button {
+    margin: 0px 20px 0px 20px;
+}
 #cor-do-botao-repositorio {
     color: #1564A9;
     border-color: #1564A9;
