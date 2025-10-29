@@ -136,92 +136,6 @@ section.Topo-do-site .flex {
     }
 }
 
-/* Habilidades */
-
-
-section.Habilidades {
-    color: white;
-    padding: 40px 4%;
-}
-
-section.Habilidades h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-    margin-left: 25px;
-}
-
-section.Habilidades .flex{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: top;
-    gap: 20px;
-}
-
-section.Habilidades .flex > *:nth-last-child(1):nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    margin-left: 0;
-    min-width: 50%;
-}
-
-section.Habilidades h2 {
-    font-size: 25px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.Habilidades-box {
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px #80D8FF;
-    transition: 0.2s;
-    gap: 20px;
-    min-height: 260px;
-
-}
-
-
-.Habilidades-box:hover {
-    transform: scale(1.05);
-}
-
-.Habilidades-box img {
-    border-radius: 20px;
-    margin-bottom: 10px;
-}
-
-.badgets {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5px;
-    height: auto;
-    
-}
-
-.badgets p {
-    text-align: center;
-    
-}
-
-.badgets p:nth-child(odd) {
-    text-align: right;
-    margin-right: 10px;
-}
-
-.badgets p:nth-child(even) {
-    text-align: left;
-    margin-left: 10px;
-}
-
-.badgets > *:nth-last-child(1):nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    margin: 0;
-}
-
-
-
-
 /* Estilo do Sobre */
 section.Sobre {
     color: white;
@@ -299,6 +213,93 @@ section.Sobre .flex {
     display: flex;
     align-items: center;
 }
+
+/* Habilidades */
+
+
+section.Habilidades {
+    color: white;
+    padding: 60px 4% 80px;
+}
+
+section.Habilidades h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.Habilidades h1 span {
+    color: #80D8FF;
+}
+
+section.Habilidades .flex{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: top;
+    gap: 20px;
+}
+
+section.Habilidades .flex > *:nth-last-child(1):nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-left: 0;
+    min-width: 50%;
+}
+
+section.Habilidades h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.Habilidades-box {
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #80D8FF;
+    transition: 0.2s;
+    gap: 20px;
+    min-height: 220px;
+
+}
+
+
+.Habilidades-box:hover {
+    transform: scale(1.05);
+}
+
+.Habilidades-box img {
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.badgets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    height: auto;
+    
+}
+
+.badgets p {
+    text-align: center;
+    
+}
+
+.badgets p:nth-child(odd) {
+    text-align: right;
+    margin-right: 10px;
+}
+
+.badgets p:nth-child(even) {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.badgets > *:nth-last-child(1):nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin: 0;
+}
+
 
 /*Projeto*/
 
