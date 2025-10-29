@@ -209,7 +209,7 @@
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 620px) {
     
     /* Topo do site */
     .Txt-topo-site {
@@ -244,6 +244,16 @@
         text-align: center;
         margin: 0;
         margin-bottom: 20px;
+    }
+
+    .badgets p:nth-child(odd) {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .badgets p:nth-child(even) {
+        text-align: center;
+        margin-left: 0;
     }
 
    /* Sobre */

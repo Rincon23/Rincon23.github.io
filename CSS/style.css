@@ -150,44 +150,34 @@ section.Habilidades h1 {
     margin-left: 25px;
 }
 
+section.Habilidades .flex{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: top;
+    gap: 20px;
+}
+
+section.Habilidades .flex > *:nth-last-child(1):nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-left: 0;
+    min-width: 50%;
+}
+
 section.Habilidades h2 {
     font-size: 25px;
     margin-bottom: 20px;
     text-align: center;
 }
 
-.badgets {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    height: auto;
-    
-}
-
-.badgets p {
-    text-align: center;
-}
-
-.badgets > *:nth-last-child(1):nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    margin-left: 0;
-}
-
-
-.Habilidades .interface .flex {
-    align-items: top;
-    justify-content: space-between;
-    gap: 20px;
-}
-
 .Habilidades-box {
-    flex: 1;
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
     box-shadow: 0 0 10px #80D8FF;
     transition: 0.2s;
     gap: 20px;
+    min-height: 260px;
+
 }
 
 
@@ -198,6 +188,35 @@ section.Habilidades h2 {
 .Habilidades-box img {
     border-radius: 20px;
     margin-bottom: 10px;
+}
+
+.badgets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    height: auto;
+    
+}
+
+.badgets p {
+    text-align: center;
+    
+}
+
+.badgets p:nth-child(odd) {
+    text-align: right;
+    margin-right: 10px;
+}
+
+.badgets p:nth-child(even) {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.badgets > *:nth-last-child(1):nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin: 0;
 }
 
 
