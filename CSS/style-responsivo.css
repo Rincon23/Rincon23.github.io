@@ -161,53 +161,13 @@
     }
 }
 
-@media screen and (max-width: 620px) {
-
-    .img-topo-site img {
-        display: block;
-        margin: 0 auto; 
-        width: 90%; 
-        height: auto;
+@media screen and (max-width: 820px) {
+    /*Projetos*/
+    .projeto .flex{
+        display: flex !important;
     }
 
-    .Habilidades .interface .flex {
-        display: grid;
-        gap: 20px;
-        grid-template-columns: repeat(1, 1fr);
-        align-items: stretch;
-    }
-
-    .Habilidades-box {
-        text-align: center;
-        width: min-content;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
-        
-    }
-
-    .Habilidades .interface h1 {
-        font-size: 22px;
-        text-align: center;
-        margin: 0;
-        margin-bottom: 20px;
-    }
-
-    .badgets {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        align-content: center;
-        text-align: center;
-        gap: 10px;
-        
-    }
-
-    .img-sobre img {
-        width: 100%;
-        height: auto;
-    }
 }
-
 
 @media screen and (max-width: 620px) {
     
@@ -237,25 +197,6 @@
         height: auto;
     }
 
-    /* Habilidades */
-
-    .Habilidades .interface h1 {
-        font-size: 22px;
-        text-align: center;
-        margin: 0;
-        margin-bottom: 20px;
-    }
-
-    .badgets p:nth-child(odd) {
-        text-align: center;
-        margin-right: 0;
-    }
-
-    .badgets p:nth-child(even) {
-        text-align: center;
-        margin-left: 0;
-    }
-
    /* Sobre */
 
     .txt-sobre h2 {
@@ -264,6 +205,11 @@
 
     .txt-sobre h2 span {
         font-size: 35px;
+    }
+
+    .img-sobre img {
+        width: 100%;
+        height: auto;
     }
 
     .icones-contato {
@@ -289,7 +235,39 @@
         font-size: 25px !important;
     }
 
-    
+    /* Habilidades */
+
+    .Habilidades .interface .flex {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: stretch;
+    }
+
+    .Habilidades-box {
+        text-align: center;
+        width: min-content;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        
+    }
+
+    .Habilidades .interface h1 {
+        font-size: 30px;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .badgets {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-content: center;
+        text-align: center;
+        gap: 10px;
+        
+    }
      /* Projeto */
 
     .projeto h2 {
@@ -301,10 +279,50 @@
     flex-direction: column;
     }
 
-     .img-projeto {
+    .img-projeto {
         width: 100%;
         height: 400px;
     }
+
+    .badgets-projeto {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 5px !important;
+        height: auto !important;
+    
+    }
+
+    .badgets-projeto p:nth-child(odd) {
+        text-align: right !important;
+        margin-right: 10px !important;
+    }
+
+    .badgets-projeto p:nth-child(even) {
+        text-align: left !important;
+        margin-left: 10px !important;
+    }
+
+    .badgets-projeto > *:nth-last-child(1):nth-child(odd) {
+        grid-column: 1 / -1 !important;
+        justify-self: center !important;
+        margin: 0 !important;
+    }
+    .badgets-projeto:has(> :first-child:nth-last-child(2)) {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .badgets-projeto:has(> :first-child:nth-last-child(2)) > :first-child {
+        text-align: left !important;
+        margin-left: 10px !important;
+    }
+
+    .badgets-projeto:has(> :first-child:nth-last-child(2)) > :last-child {
+        text-align: right !important;
+        margin-right: 10px !important;
+    }
+
+
+
 
     /*Cursos*/
 

@@ -48,6 +48,7 @@ h2.titulo {
 
 header {
     padding: 40px 4%;
+    box-shadow: 0 0 40px 10px #80d9ff3d;
 }
 
 header > .interface{
@@ -90,6 +91,7 @@ header nav.Menu ul li {
 
 /* Estilo do topo do site */
 section.Topo-do-site {
+    margin-top: 30px;
     padding: 40px 4%;
 }
 
@@ -138,8 +140,7 @@ section.Topo-do-site .flex {
 
 /* Estilo do Sobre */
 section.Sobre {
-    color: white;
-    padding: 40px 4%;
+    padding: 50px 4%;
 }
 
 section.Sobre .flex {
@@ -151,7 +152,7 @@ section.Sobre .flex {
     font-size: 50px;
     margin-bottom: 30px;
     line-height: 45px;
-    
+    color: white;
 }
 
 .txt-sobre h2 span {
@@ -164,6 +165,7 @@ section.Sobre .flex {
     font-size: 25px;
     margin-bottom: 20px;
     text-align: justify;
+    color: white;
 }
 
 .img-sobre img {
@@ -219,7 +221,8 @@ section.Sobre .flex {
 
 section.Habilidades {
     color: white;
-    padding: 60px 4% 80px;
+    padding: 50px 4%;
+    box-shadow: 0 0 40px 10px #80d9ff3d;
 }
 
 section.Habilidades h1 {
@@ -233,7 +236,7 @@ section.Habilidades h1 {
 
 section.Habilidades .flex{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     align-items: top;
     gap: 20px;
 }
@@ -304,8 +307,7 @@ section.Habilidades h2 {
 /*Projeto*/
 
 section.projeto {
-    padding: 80px 4%;
-    box-shadow: 0 0 40px 10px #80d9ff3d;
+    padding: 50px 4%;
 }
 
 section.projeto .flex {
@@ -330,6 +332,25 @@ h2.titulo-projeto {
     margin-bottom: 90px;
     color: #ffffff;
     text-align: center;
+}
+
+.sub-titulo-projeto {
+    font-size: 45px;
+    margin-bottom: 50px;
+    color: #ffffff;
+    text-align: center;
+}
+
+section.projeto .flex > *:nth-last-child(1):nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-left: 0;
+    min-width: 50%;
+    min-height: 550px;
+}
+
+section.projeto .flex {
+    margin-bottom: 40px;
 }
 
 .borda-projeto {
@@ -385,18 +406,12 @@ h2.titulo-projeto {
 
 .tec-utilizadas-projeto .badgets-projeto {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: dense;
 }
 
-.tec-utilizadas-projeto .badgets-projeto > *:nth-last-child(1):nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    margin-left: 0;
-}
-
 .tec-utilizadas-projeto p {
-    text-align:justify;
+    text-align:center;
     margin-top: 8px;
     
 }
@@ -406,6 +421,27 @@ h2.titulo-projeto {
     align-self: center;
 }
 
+.tec-utilizadas-projeto .badgets-projeto > :only-child {
+    grid-column: 2;
+}
+
+/* se este grid tiver exatamente 2 filhos, centraliza o conjunto */
+.tec-utilizadas-projeto .badgets-projeto:has(> :first-child:nth-last-child(2)) {
+  justify-content: center;             /* centraliza o grupo */
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* vira 2 colunas só */
+}
+
+/* 1 item sobrando na última linha: centraliza */
+.tec-utilizadas-projeto .badgets-projeto > *:last-child:nth-child(3n + 1) {
+  grid-column: 2; /* coloca na coluna do meio */
+}
+
+/* 2 itens sobrando na última linha: joga o primeiro pra coluna 2, o segundo fica na 3 */
+.tec-utilizadas-projeto .badgets-projeto > *:nth-last-child(2):nth-child(3n + 1) {
+  grid-column: 2;
+}
+
+/* Não utilizo mais pois os bagets estão por 3 agora
 .tec-utilizadas-projeto .badgets-projeto p:nth-child(odd) {
     text-align: right;
     margin-right: 10px;
@@ -416,9 +452,11 @@ h2.titulo-projeto {
     margin-left: 10px;
 }
 
+
+
 /*Cursos*/
 section.cursos {
-    padding: 80px 4%;
+    padding: 50px 4%;
     box-shadow: 0 0 40px 10px #80d9ff3d;
 }
 
@@ -446,15 +484,9 @@ h2.titulo-cursos {
     text-align: center;
 }
 
-h1.sub-titulo-cursos {
-    font-size: 50px;
-    color: #ffffff;
-    margin-bottom: 25px;
-}
-
 .sub-titulo-cursos {
     font-size: 50px;
-    margin-bottom: 90px;
+    margin-bottom: 50px;
     color: #ffffff;
     text-align: center;
 }
@@ -470,13 +502,13 @@ h1.sub-titulo-cursos {
     height: 460px;
     background-size: cover;
     border-radius: 20px;
+    background-position: center;
     position: relative;
-    aspect-ratio: 3 / 4;
-    
 }
 
 .overlay {
     position: absolute;
+    inset: 0; 
     top: 0;
     left: 0;
     width: 100%;
