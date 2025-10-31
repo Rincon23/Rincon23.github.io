@@ -84,7 +84,7 @@ header nav.Menu ul li {
 }
 
 .Menu ul li {
-    font-size: 30px;
+    font-size: 27px;
     margin: 0 30px;
 }
 
@@ -275,32 +275,17 @@ section.Habilidades h2 {
 }
 
 .badgets {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5px;
-    height: auto;
-    
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto ;
 }
+
 
 .badgets p {
-    text-align: center;
-    
-}
-
-.badgets p:nth-child(odd) {
-    text-align: right;
-    margin-right: 10px;
-}
-
-.badgets p:nth-child(even) {
-    text-align: left;
-    margin-left: 10px;
-}
-
-.badgets > *:nth-last-child(1):nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    margin: 0;
+  margin: 0;
 }
 
 
@@ -355,7 +340,7 @@ section.projeto .flex {
 
 .borda-projeto {
     border-radius: 20px;
-    padding: 5px;
+    padding: 6px;
     box-shadow: 0 0 40px 10px #80d9ff3d;
 }
 
@@ -404,12 +389,6 @@ section.projeto .flex {
     flex-direction: column;
 }
 
-.tec-utilizadas-projeto .badgets-projeto {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-flow: dense;
-}
-
 .tec-utilizadas-projeto p {
     text-align:center;
     margin-top: 8px;
@@ -421,37 +400,19 @@ section.projeto .flex {
     align-self: center;
 }
 
-.tec-utilizadas-projeto .badgets-projeto > :only-child {
-    grid-column: 2;
+.badgets-projeto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  width: 80%;
+  margin: 7px auto 0px;
 }
 
-/* se este grid tiver exatamente 2 filhos, centraliza o conjunto */
-.tec-utilizadas-projeto .badgets-projeto:has(> :first-child:nth-last-child(2)) {
-  justify-content: center;             /* centraliza o grupo */
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* vira 2 colunas só */
-}
 
-/* 1 item sobrando na última linha: centraliza */
-.tec-utilizadas-projeto .badgets-projeto > *:last-child:nth-child(3n + 1) {
-  grid-column: 2; /* coloca na coluna do meio */
+.badgets-projeto p {
+  margin: 0;
 }
-
-/* 2 itens sobrando na última linha: joga o primeiro pra coluna 2, o segundo fica na 3 */
-.tec-utilizadas-projeto .badgets-projeto > *:nth-last-child(2):nth-child(3n + 1) {
-  grid-column: 2;
-}
-
-/* Não utilizo mais pois os bagets estão por 3 agora
-.tec-utilizadas-projeto .badgets-projeto p:nth-child(odd) {
-    text-align: right;
-    margin-right: 10px;
-}
-
-.tec-utilizadas-projeto .badgets-projeto p:nth-child(even) {
-    text-align: left;
-    margin-left: 10px;
-}
-
 
 
 /*Cursos*/

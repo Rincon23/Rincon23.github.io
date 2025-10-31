@@ -1,4 +1,4 @@
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1077px) {
 
     /* Estilos gerais */
 
@@ -128,15 +128,6 @@
         
     }
 
-    .badgets {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        align-content: center;
-        text-align: center;
-        gap: 10px;
-        
-    }
-
     /* footer */
 
     footer .flex {
@@ -147,7 +138,7 @@
 
 }
 
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1077px) {
     .menu-mobile {
         display: none;
     }
@@ -260,14 +251,6 @@
         margin-bottom: 20px;
     }
 
-    .badgets {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        align-content: center;
-        text-align: center;
-        gap: 10px;
-        
-    }
      /* Projeto */
 
     .projeto h2 {
@@ -283,45 +266,6 @@
         width: 100%;
         height: 400px;
     }
-
-    .badgets-projeto {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 5px !important;
-        height: auto !important;
-    
-    }
-
-    .badgets-projeto p:nth-child(odd) {
-        text-align: right !important;
-        margin-right: 10px !important;
-    }
-
-    .badgets-projeto p:nth-child(even) {
-        text-align: left !important;
-        margin-left: 10px !important;
-    }
-
-    .badgets-projeto > *:nth-last-child(1):nth-child(odd) {
-        grid-column: 1 / -1 !important;
-        justify-self: center !important;
-        margin: 0 !important;
-    }
-    .badgets-projeto:has(> :first-child:nth-last-child(2)) {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-
-    .badgets-projeto:has(> :first-child:nth-last-child(2)) > :first-child {
-        text-align: left !important;
-        margin-left: 10px !important;
-    }
-
-    .badgets-projeto:has(> :first-child:nth-last-child(2)) > :last-child {
-        text-align: right !important;
-        margin-right: 10px !important;
-    }
-
-
 
 
     /*Cursos*/
