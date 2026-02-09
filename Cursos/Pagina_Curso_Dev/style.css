@@ -1,0 +1,89 @@
+#teste {
+    background-color: red;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: auto
+}
+
+.btn-voltar i {
+    color:#a3a29d;
+    position: fixed;
+    margin-left: 70px;
+    font-size: 50px;
+    border-radius: 50%;
+}
+
+.btn-voltar i:hover {
+    box-shadow: 0 0 10px #a3a29d;
+    transform: scale(1.05);
+}
+
+.flex {
+    display: flex;
+}	
+
+h1 {
+    color: #ffffff;
+    font-size: 60px;
+    line-height: 40px;
+    margin-bottom: 60px;
+}
+span {
+    color: #a3a29d;
+}
+
+.links-container {
+    margin: 0px 50px 0px 50px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 40px 10px #a3a29d;
+}
+
+.container-repositorio {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#cor-do-botao-repositorio {
+    color: #a3a29d;
+    border-color: #a3a29d;
+}
+
+#cor-do-botao-repositorio:hover {
+    color: #ffffff;
+    background-color: #a3a29d;
+}
+
+.container {
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 40px
+    }
+
+    .row {
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+
+    .col  {
+        margin-bottom: 20px;
+        size: 30%;
+    }
+}
