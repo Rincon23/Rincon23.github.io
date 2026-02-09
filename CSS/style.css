@@ -271,7 +271,6 @@ section.Habilidades h2 {
 
 .Habilidades-box img {
     border-radius: 20px;
-    margin-bottom: 10px;
 }
 
 .badgets {
@@ -428,6 +427,14 @@ section.cursos .flex {
     gap: 90px;
 }
 
+section.cursos .flex > *:nth-last-child(1):nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-left: 0;
+    min-width: 50%;
+    min-height: 550px;
+}
+
 h2.titulo-cursos {
     font-size: 50px;
     color: #ffffff;
@@ -496,20 +503,8 @@ h2.titulo-cursos {
     flex-direction: column;
 }
 
-.tec-utilizadas-cursos .badgets-cursos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-flow: dense;
-}
-
-.tec-utilizadas-cursos .badgets-cursos > *:nth-last-child(1):nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    margin-left: 0;
-}
-
 .tec-utilizadas-cursos p {
-    text-align:justify;
+    text-align:center;
     margin-top: 8px;
     
 }
@@ -519,14 +514,18 @@ h2.titulo-cursos {
     align-self: center;
 }
 
-.tec-utilizadas-cursos .badgets-cursos p:nth-child(odd) {
-    text-align: right;
-    margin-right: 10px;
+.badgets-cursos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  width: 80%;
+  margin: 15px auto 10px;
 }
 
-.tec-utilizadas-cursos .badgets-cursos p:nth-child(even) {
-    text-align: left;
-    margin-left: 10px;
+
+.badgets-cursos p {
+  margin: 0;
 }
 
 /*Formulário*/
