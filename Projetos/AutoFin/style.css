@@ -79,6 +79,11 @@ span {
         font-size: 40px
     }
 
+    .btn-voltar i {
+        font-size: 37px;
+        margin-left: 35px;
+    }
+
     .row {
         flex-direction: column;
         margin-bottom: 0px;
