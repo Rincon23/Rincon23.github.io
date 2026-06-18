@@ -1,0 +1,106 @@
+#teste {
+    background-color: red;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: auto
+}
+
+.btn-voltar i {
+    color:#cacaca;
+    position: fixed;
+    margin-left: 70px;
+    font-size: 50px;
+    border-radius: 50%;
+}
+
+.btn-voltar i:hover {
+    box-shadow: 0 0 10px #cacaca;
+    transform: scale(1.05);
+}
+
+.flex {
+    display: flex;
+}	
+
+h1 {
+    color: #ffffff;
+    font-size: 60px;
+    line-height: 40px;
+    margin-bottom: 60px;
+}
+span {
+    color: #cacaca;
+}
+
+.links-container {
+    margin: 0px 50px 0px 50px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 40px 10px #cacaca;
+}
+
+.container-repositorio {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-repositorio button {
+    margin: 0px 20px 0px 20px;
+}
+#cor-do-botao-repositorio {
+    color: #cacaca;
+    border-color: #cacaca;
+}
+
+#cor-do-botao-repositorio:hover {
+    color: #ffffff;
+    background-color: #cacaca;
+}
+
+.container {
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 40px
+    }
+
+    .row {
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+
+    .col  {
+        margin-bottom: 20px;
+        size: 30%;
+    }
+}
+
+.video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.container-principal {
+    margin-bottom: 30px !important;
+}
