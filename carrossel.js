@@ -15,13 +15,29 @@ function iniciarCarrossel(carrossel) {
     let arrastou = false;
     let quadroPedido = null;
     let anterior = null;
+    let ativo = false;        // false quando todos os cards cabem na tela e a faixa fica parada
+    let visivel = false;
 
-    // Mede os cards e põe cópias atrás dos originais até a faixa cobrir a tela
-    // mais uma volta inteira, para nunca aparecer um buraco no fim
+    // Mede os cards. Se todos cabem na tela, a faixa fica parada e centralizada, sem setas.
+    // Se não cabem, põe cópias atrás dos originais até a faixa cobrir a tela mais uma
+    // volta inteira, para nunca aparecer um buraco no fim
     function medir() {
         let espaco = parseFloat(getComputedStyle(trilho).columnGap) || 0;
         passo = originais[0].offsetWidth + espaco;
         volta = passo * originais.length;
+        let larguraDosCards = volta - espaco;
+        ativo = larguraDosCards > janela.clientWidth * 0.92;
+        carrossel.classList.toggle('carrossel-estatico', !ativo);
+
+        if (!ativo) {
+            desligar();
+            [...trilho.children].slice(originais.length).forEach((copia) => copia.remove());
+            posicao = 0;
+            salto = 0;
+            trilho.style.transform = '';
+            return;
+        }
+
         let copias = trilho.children.length / originais.length;
         while (copias * volta < janela.clientWidth + volta) {
             for (let card of originais) {
@@ -32,6 +48,7 @@ function iniciarCarrossel(carrossel) {
             }
             copias++;
         }
+        ligar();
     }
 
     function quadro(agora) {
@@ -53,7 +70,7 @@ function iniciarCarrossel(carrossel) {
     }
 
     function ligar() {
-        if (quadroPedido === null) quadroPedido = requestAnimationFrame(quadro);
+        if (ativo && visivel && quadroPedido === null) quadroPedido = requestAnimationFrame(quadro);
     }
 
     function desligar() {
@@ -71,7 +88,7 @@ function iniciarCarrossel(carrossel) {
     // Arrastar para o lado (dedo ou mouse). Só vira arraste depois de 6px, para um toque
     // simples continuar abrindo o card; ao soltar, a faixa segue um pouco no embalo
     trilho.addEventListener('pointerdown', (evento) => {
-        if (evento.button !== 0) return;
+        if (!ativo || evento.button !== 0) return;
         pressionado = { id: evento.pointerId, inicioX: evento.clientX, ultimoX: evento.clientX, amostras: [] };
         arrastou = false;
         salto = 0;
@@ -136,7 +153,8 @@ function iniciarCarrossel(carrossel) {
 
     // Só anima enquanto aparece na tela
     new IntersectionObserver((entradas) => {
-        entradas[0].isIntersecting ? ligar() : desligar();
+        visivel = entradas[0].isIntersecting;
+        visivel ? ligar() : desligar();
     }).observe(janela);
 
     new ResizeObserver(medir).observe(janela);
