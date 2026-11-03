@@ -294,13 +294,6 @@ section.projeto {
     padding: 50px 4%;
 }
 
-section.projeto .flex {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: top;
-    gap: 90px;
-}
-
 h2.titulo-projeto {
     font-size: 50px;
     color: #ffffff;
@@ -325,16 +318,89 @@ h2.titulo-projeto {
     text-align: center;
 }
 
-section.projeto .flex > *:nth-last-child(1):nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    margin-left: 0;
-    min-width: 50%;
-    min-height: 550px;
+/* Carrossel de projetos */
+
+.carrossel-controles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
-section.projeto .flex {
-    margin-bottom: 40px;
+.carrossel-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: #80D8FF;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrossel-btn:hover {
+    box-shadow: 0 0 10px #1ba7e4;
+    transform: scale(1.05);
+}
+
+.carrossel-pontos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carrossel-pontos button {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    background-color: #3a3a3a;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.carrossel-pontos button[aria-current="true"] {
+    width: 32px;
+    background-color: #80D8FF;
+}
+
+.carrossel-btn:focus-visible,
+.carrossel-pontos button:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.carrossel-trilho {
+    --por-vez: 3;
+    --espaco: 40px;
+    position: relative;
+    display: flex;
+    gap: var(--espaco);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 50px 40px;
+    scroll-padding: 0 40px;
+    scrollbar-width: none;
+}
+
+.carrossel-trilho::-webkit-scrollbar {
+    display: none;
+}
+
+.carrossel-trilho:focus-visible {
+    outline: 2px solid #80D8FF;
+    outline-offset: -2px;
+    border-radius: 20px;
+}
+
+.carrossel-trilho > .borda-projeto {
+    flex: 0 0 calc((100% - (var(--por-vez) - 1) * var(--espaco)) / var(--por-vez));
+    scroll-snap-align: start;
 }
 
 .borda-projeto {
