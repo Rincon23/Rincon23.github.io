@@ -216,82 +216,15 @@ section.Sobre .flex {
     align-items: center;
 }
 
-/* Habilidades */
-
-
-section.Habilidades {
-    color: white;
-    padding: 50px 4%;
-    box-shadow: 0 0 40px 10px #80d9ff3d;
-}
-
-section.Habilidades h1 {
-    font-size: 50px;
-    text-align: center;
-    margin-bottom: 30px;
-}
-.Habilidades h1 span {
-    color: #80D8FF;
-}
-
-section.Habilidades .flex{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: top;
-    gap: 20px;
-}
-
-section.Habilidades .flex > *:nth-last-child(1):nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    margin-left: 0;
-    min-width: 50%;
-}
-
-section.Habilidades h2 {
-    font-size: 25px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.Habilidades-box {
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px #80D8FF;
-    transition: 0.2s;
-    gap: 20px;
-    min-height: 220px;
-
-}
-
-
-.Habilidades-box:hover {
-    transform: scale(1.05);
-}
-
-.Habilidades-box img {
-    border-radius: 20px;
-}
-
-.badgets {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  width: 80%;
-  margin: 0 auto ;
-}
-
-
-.badgets p {
-  margin: 0;
-}
-
-
 /*Projeto*/
 
 section.projeto {
-    padding: 50px 4%;
+    padding: 50px 0;
+}
+
+/* o carrossel ocupa a largura toda da tela; só os títulos ficam com a margem lateral */
+section.projeto .interface {
+    padding: 0 4%;
 }
 
 h2.titulo-projeto {
@@ -311,190 +244,177 @@ h2.titulo-projeto {
     text-align: center;
 }
 
-.sub-titulo-projeto {
-    font-size: 45px;
-    margin-bottom: 50px;
-    color: #ffffff;
-    text-align: center;
+/* Carrossel: faixa de cards que desliza sem parar (projetos e cursos) */
+
+.carrossel-janela {
+    overflow: hidden;
+    padding: 30px 0 40px;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
 }
 
-/* Carrossel de projetos */
-
-.carrossel-controles {
+/* pan-y: arrastar na vertical continua rolando a página; na horizontal, quem move é o carrossel */
+.carrossel-trilho {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    gap: 28px;
+    width: max-content;
+    will-change: transform;
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
-.carrossel-btn {
-    width: 50px;
-    height: 50px;
+.carrossel-trilho img {
+    -webkit-user-drag: none;
+}
+
+.carrossel-setas {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.carrossel-seta {
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-    border: none;
-    background-color: #80D8FF;
-    font-size: 24px;
+    border: 1px solid #80d8ff66;
+    background-color: #0f1922;
+    color: #80D8FF;
+    font-size: 22px;
     cursor: pointer;
-    transition: 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.2s;
 }
 
-.carrossel-btn:hover {
-    box-shadow: 0 0 10px #1ba7e4;
+.carrossel-seta:hover {
+    background-color: #80D8FF;
+    color: #000000;
+    box-shadow: 0 0 14px #1ba7e4;
     transform: scale(1.05);
 }
 
-.carrossel-pontos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+.carrossel-seta:active {
+    transform: scale(0.95);
 }
 
-.carrossel-pontos button {
-    width: 12px;
-    height: 12px;
-    padding: 0;
-    border: none;
-    border-radius: 6px;
-    background-color: #3a3a3a;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.carrossel-pontos button[aria-current="true"] {
-    width: 32px;
-    background-color: #80D8FF;
-}
-
-.carrossel-btn:focus-visible,
-.carrossel-pontos button:focus-visible {
+.carrossel-seta:focus-visible {
     outline: 2px solid #ffffff;
     outline-offset: 3px;
 }
 
-.carrossel-trilho {
-    --por-vez: 3;
-    --espaco: 40px;
-    position: relative;
-    display: flex;
-    gap: var(--espaco);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 50px 40px;
-    scroll-padding: 0 40px;
-    scrollbar-width: none;
-}
-
-.carrossel-trilho::-webkit-scrollbar {
-    display: none;
-}
-
-.carrossel-trilho:focus-visible {
-    outline: 2px solid #80D8FF;
-    outline-offset: -2px;
-    border-radius: 20px;
-}
-
-.carrossel-trilho > .borda-projeto {
-    flex: 0 0 calc((100% - (var(--por-vez) - 1) * var(--espaco)) / var(--por-vez));
-    scroll-snap-align: start;
-}
-
-.borda-projeto {
-    border-radius: 20px;
-    padding: 8px;
-    box-shadow: 0 0 40px 10px #80d9ff3d;
-}
-
-.img-projeto{
-
-    background-size: contain;
-    background-repeat: no-repeat;
-    border-radius: 20px;
-    background-position: center;
-    cursor: pointer;
-    position: relative;
-    aspect-ratio: 13 / 10;
-    
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 600;
-    color: #ffffff;
-    opacity: 0;
-    
-}
-
-.overlay:hover {
-    opacity: 1;
-    transition: 1.5s;
-}
-
-
-.tec-utilizadas-projeto {
-    color: white;
+.card {
+    flex: 0 0 340px;
     display: flex;
     flex-direction: column;
-}
-
-.tec-utilizadas-projeto p {
-    text-align:center;
-    margin-top: 8px;
-    
-}
-
-.tec-utilizadas-projeto p img {
+    background: linear-gradient(180deg, #0f1922 0%, #0a0f14 100%);
+    border: 1px solid #80d8ff26;
     border-radius: 20px;
-    align-self: center;
+    overflow: hidden;
+    color: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
-.badgets-projeto {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  width: 80%;
-  margin: 7px auto 0px;
+.card:hover,
+.card:focus-visible {
+    transform: translateY(-8px);
+    border-color: #80d8ff99;
+    box-shadow: 0 14px 40px #80d9ff33;
+    outline: none;
 }
 
+.card-capa {
+    overflow: hidden;
+}
 
-.badgets-projeto p {
-  margin: 0;
+.card-capa img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 850 / 620;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.card:hover .card-capa img {
+    transform: scale(1.05);
+}
+
+.card-corpo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 22px 22px;
+    border-top: 1px solid #80d8ff1f;
+}
+
+.card-tipo {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #80D8FF;
+}
+
+.card h3 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #a9b8c6;
+}
+
+.card-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.card-tags li {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #80d8ff14;
+    border: 1px solid #80d8ff33;
+    color: #cdeeff;
+}
+
+.card-link {
+    margin-top: auto;
+    padding-top: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #80D8FF;
+}
+
+.card-link i {
+    transition: transform 0.3s;
+}
+
+.card:hover .card-link i {
+    transform: translateX(4px);
 }
 
 
 /*Cursos*/
 section.cursos {
-    padding: 50px 4%;
+    padding: 50px 0;
     box-shadow: 0 0 40px 10px #80d9ff3d;
 }
 
-section.cursos .flex {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: top;
-    gap: 90px;
-}
-
-section.cursos .flex > *:nth-last-child(1):nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    margin-left: 0;
-    min-width: 50%;
-    min-height: 550px;
+section.cursos .interface {
+    padding: 0 4%;
 }
 
 h2.titulo-cursos {
@@ -512,82 +432,6 @@ h2.titulo-cursos {
     margin-bottom: 90px;
     color: #ffffff;
     text-align: center;
-}
-
-.sub-titulo-cursos {
-    font-size: 50px;
-    margin-bottom: 50px;
-    color: #ffffff;
-    text-align: center;
-}
-
-.borda-cursos {
-    border-radius: 20px;
-    padding: 5px;
-    box-shadow: 0 0 40px 10px #80d9ff3d;
-}
-
-.img-cursos{
-    width: 100%;
-    height: 460px;
-    background-size: cover;
-    border-radius: 20px;
-    background-position: center;
-    position: relative;
-}
-
-.overlay {
-    position: absolute;
-    inset: 0; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 600;
-    color: #ffffff;
-    opacity: 0;
-    
-}
-
-.overlay:hover {
-    opacity: 1;
-    transition: 1.5s;
-}
-
-.tec-utilizadas-cursos {
-    color: white;
-    display: flex;
-    flex-direction: column;
-}
-
-.tec-utilizadas-cursos p {
-    text-align:center;
-    margin-top: 8px;
-    
-}
-
-.tec-utilizadas-cursos p img {
-    border-radius: 20px;
-    align-self: center;
-}
-
-.badgets-cursos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  width: 80%;
-  margin: 15px auto 10px;
-}
-
-
-.badgets-cursos p {
-  margin: 0;
 }
 
 /*Formulário*/

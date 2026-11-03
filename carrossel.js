@@ -1,118 +1,146 @@
-let trilho = document.getElementById('carrossel-projetos');
-let pontos = document.getElementById('carrossel-pontos');
-let btnAnterior = document.getElementById('carrossel-anterior');
-let btnProximo = document.getElementById('carrossel-proximo');
-let cards = [...trilho.children];
-
-let posicoes = [];
-let atual = 0;
-let autoplay = null;
-let usuarioMexeu = false;
-let naTela = false;
+const VELOCIDADE = 45; // pixels por segundo
 let semMovimento = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-// Uma parada por card; no fim, onde varios cards ja cabem na tela, as paradas iguais viram uma so
-function calcularPosicoes() {
-    let max = trilho.scrollWidth - trilho.clientWidth;
-    let recuo = parseFloat(getComputedStyle(trilho).paddingLeft);
-    posicoes = [];
-    for (let card of cards) {
-        let alvo = Math.min(Math.max(card.offsetLeft - recuo, 0), max);
-        if (posicoes.length === 0 || alvo - posicoes[posicoes.length - 1] > 1) {
-            posicoes.push(alvo);
+function iniciarCarrossel(carrossel) {
+    let janela = carrossel.querySelector('.carrossel-janela');
+    let trilho = carrossel.querySelector('.carrossel-trilho');
+    let originais = [...trilho.children];
+    let passo = 0;      // largura de um card mais o espaço até o próximo
+    let volta = 0;      // largura de todos os cards originais; depois de andar isso a faixa fica igual ao começo
+    let posicao = 0;
+    let salto = 0;      // o quanto as setas ainda mandam andar
+    let mouseEmCima = false;
+    let focoTeclado = false;
+    let pressionado = null;   // dedo ou botão do mouse em cima da faixa
+    let arrastou = false;
+    let quadroPedido = null;
+    let anterior = null;
+
+    // Mede os cards e põe cópias atrás dos originais até a faixa cobrir a tela
+    // mais uma volta inteira, para nunca aparecer um buraco no fim
+    function medir() {
+        let espaco = parseFloat(getComputedStyle(trilho).columnGap) || 0;
+        passo = originais[0].offsetWidth + espaco;
+        volta = passo * originais.length;
+        let copias = trilho.children.length / originais.length;
+        while (copias * volta < janela.clientWidth + volta) {
+            for (let card of originais) {
+                let copia = card.cloneNode(true);
+                copia.setAttribute('aria-hidden', 'true');
+                copia.setAttribute('tabindex', '-1');
+                trilho.appendChild(copia);
+            }
+            copias++;
         }
     }
-    desenharPontos();
-    atualizarAtual();
-}
 
-function desenharPontos() {
-    if (pontos.children.length === posicoes.length) return;
-    pontos.innerHTML = '';
-    posicoes.forEach((_, i) => {
-        let ponto = document.createElement('button');
-        ponto.type = 'button';
-        ponto.setAttribute('aria-label', 'Ir para ' + cards[i].querySelector('.overlay').textContent);
-        ponto.addEventListener('click', () => {
-            pararDeVez();
-            irPara(i);
+    function quadro(agora) {
+        let dt = anterior === null ? 0 : Math.min((agora - anterior) / 1000, 0.1);
+        anterior = agora;
+        if (!mouseEmCima && !focoTeclado && !pressionado && !semMovimento.matches) {
+            posicao += VELOCIDADE * dt;
+        }
+        if (salto !== 0) {
+            // anda uma fração do que falta a cada quadro: rápido no começo, suave no fim
+            let parte = semMovimento.matches ? salto : salto * Math.min(1, dt * 9);
+            if (Math.abs(salto - parte) < 0.5) parte = salto;
+            posicao += parte;
+            salto -= parte;
+        }
+        posicao = ((posicao % volta) + volta) % volta;
+        trilho.style.transform = `translateX(${-posicao}px)`;
+        quadroPedido = requestAnimationFrame(quadro);
+    }
+
+    function ligar() {
+        if (quadroPedido === null) quadroPedido = requestAnimationFrame(quadro);
+    }
+
+    function desligar() {
+        cancelAnimationFrame(quadroPedido);
+        quadroPedido = null;
+        anterior = null;
+    }
+
+    carrossel.querySelectorAll('.carrossel-seta').forEach((seta) => {
+        seta.addEventListener('click', () => {
+            salto += Number(seta.dataset.direcao) * passo;
         });
-        pontos.appendChild(ponto);
     });
-}
 
-function atualizarAtual() {
-    let x = trilho.scrollLeft;
-    atual = 0;
-    posicoes.forEach((p, i) => {
-        if (Math.abs(p - x) < Math.abs(posicoes[atual] - x)) atual = i;
+    // Arrastar para o lado (dedo ou mouse). Só vira arraste depois de 6px, para um toque
+    // simples continuar abrindo o card; ao soltar, a faixa segue um pouco no embalo
+    trilho.addEventListener('pointerdown', (evento) => {
+        if (evento.button !== 0) return;
+        pressionado = { id: evento.pointerId, inicioX: evento.clientX, ultimoX: evento.clientX, amostras: [] };
+        arrastou = false;
+        salto = 0;
     });
-    [...pontos.children].forEach((ponto, i) => {
-        ponto.setAttribute('aria-current', i === atual ? 'true' : 'false');
+
+    trilho.addEventListener('pointermove', (evento) => {
+        if (!pressionado || evento.pointerId !== pressionado.id) return;
+        if (!arrastou) {
+            if (Math.abs(evento.clientX - pressionado.inicioX) < 6) return;
+            arrastou = true;
+            trilho.setPointerCapture(evento.pointerId);
+        }
+        posicao -= evento.clientX - pressionado.ultimoX;
+        pressionado.ultimoX = evento.clientX;
+        pressionado.amostras.push({ x: evento.clientX, t: evento.timeStamp });
     });
-}
 
-function irPara(i) {
-    atual = (i + posicoes.length) % posicoes.length;
-    trilho.scrollTo({ left: posicoes[atual], behavior: semMovimento.matches ? 'auto' : 'smooth' });
-}
+    function soltar(evento) {
+        if (!pressionado || evento.pointerId !== pressionado.id) return;
+        // velocidade dos últimos 100ms do gesto; quem segurou parado antes de soltar não ganha embalo
+        let recentes = pressionado.amostras.filter((a) => evento.timeStamp - a.t < 100);
+        if (arrastou && recentes.length > 1) {
+            let primeira = recentes[0];
+            let ultima = recentes[recentes.length - 1];
+            let tempo = (ultima.t - primeira.t) / 1000;
+            if (tempo > 0.01) {
+                let embalo = -((ultima.x - primeira.x) / tempo) * 0.25;
+                salto = Math.max(-2 * passo, Math.min(2 * passo, embalo));
+            }
+        }
+        pressionado = null;
+    }
+    trilho.addEventListener('pointerup', soltar);
+    trilho.addEventListener('pointercancel', soltar);
 
-// O carrossel anda sozinho enquanto aparece na tela, pausa com o mouse em cima
-// e para de vez quando a pessoa usa as setas, os pontos ou arrasta
-function iniciarAutoplay() {
-    if (autoplay || usuarioMexeu || !naTela || semMovimento.matches) return;
-    autoplay = setInterval(() => irPara(atual + 1), 6000);
-}
+    // O clique que o navegador dispara ao soltar um arraste não deve abrir o link
+    trilho.addEventListener('click', (evento) => {
+        if (!arrastou) return;
+        evento.preventDefault();
+        evento.stopPropagation();
+        arrastou = false;
+    }, true);
+    trilho.addEventListener('dragstart', (evento) => evento.preventDefault());
 
-function pausarAutoplay() {
-    clearInterval(autoplay);
-    autoplay = null;
-}
-
-function pararDeVez() {
-    usuarioMexeu = true;
-    pausarAutoplay();
-}
-
-btnAnterior.addEventListener('click', () => {
-    pararDeVez();
-    irPara(atual - 1);
-});
-
-btnProximo.addEventListener('click', () => {
-    pararDeVez();
-    irPara(atual + 1);
-});
-
-let agendado = false;
-trilho.addEventListener('scroll', () => {
-    if (agendado) return;
-    agendado = true;
-    requestAnimationFrame(() => {
-        agendado = false;
-        atualizarAtual();
+    // Pausa com o mouse em cima dos cards; no celular um toque não trava a faixa
+    trilho.addEventListener('pointerenter', (evento) => {
+        if (evento.pointerType === 'mouse') mouseEmCima = true;
     });
-});
+    trilho.addEventListener('pointerleave', () => {
+        mouseEmCima = false;
+    });
 
-['touchstart', 'wheel', 'keydown'].forEach((evento) => {
-    trilho.addEventListener(evento, pararDeVez, { passive: true });
-});
+    // Navegando com Tab o navegador rola a janela até o card focado; ao sair, ela volta ao lugar
+    trilho.addEventListener('focusin', (evento) => {
+        if (evento.target.matches(':focus-visible')) focoTeclado = true;
+    });
+    trilho.addEventListener('focusout', (evento) => {
+        if (trilho.contains(evento.relatedTarget)) return;
+        focoTeclado = false;
+        janela.scrollLeft = 0;
+    });
 
-trilho.addEventListener('mouseenter', pausarAutoplay);
-trilho.addEventListener('mouseleave', iniciarAutoplay);
-trilho.addEventListener('focusin', pausarAutoplay);
-trilho.addEventListener('focusout', iniciarAutoplay);
+    // Só anima enquanto aparece na tela
+    new IntersectionObserver((entradas) => {
+        entradas[0].isIntersecting ? ligar() : desligar();
+    }).observe(janela);
 
-new IntersectionObserver((entradas) => {
-    naTela = entradas[0].isIntersecting;
-    naTela ? iniciarAutoplay() : pausarAutoplay();
-}, { threshold: 0.4 }).observe(trilho);
+    new ResizeObserver(medir).observe(janela);
+    medir();
+}
 
-// Só a largura muda as paradas; a altura muda toda vez que um badge termina de carregar
-let larguraAnterior = trilho.clientWidth;
-new ResizeObserver(() => {
-    if (trilho.clientWidth === larguraAnterior) return;
-    larguraAnterior = trilho.clientWidth;
-    calcularPosicoes();
-}).observe(trilho);
-calcularPosicoes();
+document.querySelectorAll('.carrossel').forEach(iniciarCarrossel);
