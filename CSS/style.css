@@ -324,6 +324,7 @@ h2.titulo-projeto {
 }
 
 .card {
+    position: relative;
     flex: 0 0 340px;
     display: flex;
     flex-direction: column;
@@ -336,11 +337,10 @@ h2.titulo-projeto {
 }
 
 .card:hover,
-.card:focus-visible {
+.card:has(a:focus-visible) {
     transform: translateY(-8px);
     border-color: #80d8ff99;
     box-shadow: 0 14px 40px #80d9ff33;
-    outline: none;
 }
 
 .card-capa {
@@ -405,22 +405,57 @@ h2.titulo-projeto {
     color: #cdeeff;
 }
 
-.card-link {
+.card-links {
     margin-top: auto;
     padding-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 22px;
+}
+
+/* o link secundário fica por cima da área clicável do principal */
+.card-link {
+    position: relative;
+    z-index: 2;
     display: inline-flex;
     align-items: center;
     gap: 6px;
     font-size: 15px;
     font-weight: 600;
+    color: #a9b8c6;
+    transition: color 0.2s;
+}
+
+.card-link:hover {
+    color: #ffffff;
+}
+
+/* o principal cobre o card inteiro: clicar em qualquer parte do card abre ele */
+.card-link-principal,
+.card-link-principal:hover {
+    position: static;
     color: #80D8FF;
+}
+
+.card-link-principal::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.card-link:focus-visible {
+    outline: 2px solid #80D8FF;
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
 .card-link i {
     transition: transform 0.3s;
 }
 
-.card:hover .card-link i {
+.card:hover .card-link-principal i {
     transform: translateX(4px);
 }
 

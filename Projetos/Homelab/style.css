@@ -1,0 +1,471 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.interface {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 5%;
+}
+
+.btn-voltar {
+    position: fixed;
+    top: 24px;
+    left: 32px;
+    z-index: 10;
+    font-size: 44px;
+    color: #cacaca;
+    line-height: 1;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.btn-voltar:hover {
+    color: #80D8FF;
+    transform: scale(1.05);
+}
+
+.kicker {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #80D8FF;
+}
+
+h1 span,
+h2 span {
+    color: #80D8FF;
+}
+
+/* Topo */
+
+.topo {
+    padding: 90px 0 50px;
+    text-align: center;
+}
+
+.topo h1 {
+    font-size: 54px;
+    margin: 12px 0 18px;
+}
+
+.topo p {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 19px;
+    line-height: 1.6;
+    color: #a9b8c6;
+}
+
+.topo-links {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 30px;
+    background-color: #80D8FF;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.botao:hover {
+    box-shadow: 0 0 12px #1ba7e4;
+    transform: scale(1.04);
+}
+
+.botao-secundario {
+    background-color: transparent;
+    color: #80D8FF;
+    border: 1px solid #80d8ff77;
+}
+
+/* Diagrama: Internet -> Cloudflare -> as duas máquinas, ligadas pelo Tailscale */
+
+.diagrama {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 36px 30px 40px;
+    margin-bottom: 70px;
+    border: 1px solid #80d8ff26;
+    border-radius: 24px;
+    background: radial-gradient(ellipse at top, #0f2230 0%, #0a0f14 60%);
+}
+
+.no {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 22px;
+    border-radius: 16px;
+    background-color: #0f1922;
+    border: 1px solid #80d8ff40;
+    max-width: 440px;
+}
+
+.no i {
+    font-size: 28px;
+    color: #80D8FF;
+}
+
+.no-cloudflare i {
+    color: #f6821f;
+}
+
+.no b,
+.maquina b {
+    display: block;
+    font-size: 18px;
+}
+
+.no span,
+.maquina-topo span {
+    font-size: 14px;
+    color: #a9b8c6;
+}
+
+.ligacao {
+    width: 2px;
+    height: 30px;
+    background-color: #80d8ff66;
+}
+
+/* um traço desce da Cloudflare e se divide para as duas máquinas */
+.ramos {
+    position: relative;
+    width: calc(50% + 70px);
+    height: 30px;
+    margin-top: 30px;
+    border: 2px solid #80d8ff66;
+    border-bottom: none;
+    border-radius: 14px 14px 0 0;
+}
+
+.ramos::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -32px;
+    width: 2px;
+    height: 30px;
+    background-color: #80d8ff66;
+}
+
+.maquinas {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 140px 1fr;
+    align-items: stretch;
+}
+
+.maquina {
+    display: block;
+    padding: 18px 20px 20px;
+    border-radius: 18px;
+    background-color: #0f1922;
+    border: 1px solid var(--cor);
+    box-shadow: 0 0 30px color-mix(in srgb, var(--cor) 25%, transparent);
+    transition: 0.25s;
+}
+
+.maquina:hover {
+    transform: translateY(-4px);
+}
+
+.maquina-orangepi {
+    --cor: #ff8a1f;
+}
+
+.maquina-servidor {
+    --cor: #e95420;
+}
+
+.maquina-topo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.maquina-topo i {
+    font-size: 30px;
+    color: var(--cor);
+}
+
+.maquina ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.maquina li {
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #ffffff0f;
+    border: 1px solid #ffffff22;
+    color: #dfe7ee;
+}
+
+.maquina li::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background-color: #4ade80;
+    vertical-align: 1px;
+}
+
+.ponte {
+    position: relative;
+    align-self: center;
+    height: 2px;
+    margin: 0 8px;
+    border-top: 2px dashed #80d8ff88;
+}
+
+.ponte span {
+    position: absolute;
+    left: 50%;
+    top: -16px;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background-color: #0a0f14;
+    border: 1px solid #80d8ff55;
+    font-size: 13px;
+    font-weight: 600;
+    color: #80D8FF;
+}
+
+/* Uma seção para cada máquina */
+
+.servidor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+    scroll-margin-top: 90px;
+}
+
+.servidor-invertido .servidor-capa {
+    order: 2;
+}
+
+.servidor-capa {
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #80d8ff26;
+}
+
+.servidor-texto h2 {
+    font-size: 40px;
+    margin: 8px 0 14px;
+}
+
+.servidor-texto p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #a9b8c6;
+    margin-bottom: 20px;
+}
+
+/* ficha técnica da máquina */
+.ficha {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.ficha div {
+    padding: 10px 14px;
+    border-radius: 12px;
+    background-color: #0f1922;
+    border: 1px solid #80d8ff26;
+}
+
+.ficha dt {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #80D8FF;
+}
+
+.ficha dd {
+    margin-top: 2px;
+    font-size: 14px;
+    color: #e6edf3;
+}
+
+.servicos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.servicos li {
+    display: grid;
+    grid-template-columns: 28px 120px 1fr;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+}
+
+.servicos i {
+    color: #80D8FF;
+    font-size: 18px;
+}
+
+.servicos span {
+    color: #a9b8c6;
+}
+
+/* O que liga tudo */
+
+.pecas {
+    padding-bottom: 90px;
+}
+
+.pecas h2 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pecas-grade {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.peca {
+    padding: 24px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #0f1922 0%, #0a0f14 100%);
+    border: 1px solid #80d8ff26;
+}
+
+.peca i {
+    font-size: 28px;
+    color: #80D8FF;
+}
+
+.peca h3 {
+    font-size: 20px;
+    margin: 10px 0 8px;
+}
+
+.peca p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #a9b8c6;
+}
+
+.peca code {
+    font-family: "Roboto Mono", monospace;
+    font-size: 13px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background-color: #ffffff14;
+    color: #cdeeff;
+}
+
+@media screen and (max-width: 820px) {
+    .btn-voltar {
+        top: 16px;
+        left: 16px;
+        font-size: 36px;
+    }
+
+    .topo h1 {
+        font-size: 38px;
+    }
+
+    .topo p {
+        font-size: 17px;
+    }
+
+    .diagrama {
+        padding: 28px 18px 30px;
+    }
+
+    /* no celular as máquinas ficam uma embaixo da outra, com o Tailscale no meio */
+    .ramos {
+        width: 2px;
+        height: 30px;
+        margin-top: 0;
+        border: none;
+        background-color: #80d8ff66;
+    }
+
+    .ramos::before {
+        display: none;
+    }
+
+    .maquinas {
+        grid-template-columns: 1fr;
+    }
+
+    .ponte {
+        width: 2px;
+        height: 60px;
+        margin: 0 auto;
+        border-top: none;
+        border-left: 2px dashed #80d8ff88;
+    }
+
+    .ponte span {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .servidor {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .servidor-invertido .servidor-capa {
+        order: 0;
+    }
+
+    .servicos li {
+        grid-template-columns: 24px 100px 1fr;
+        font-size: 14px;
+    }
+
+    .pecas-grade {
+        grid-template-columns: 1fr;
+    }
+}

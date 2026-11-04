@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homelab</title>
+    <link rel="icon" href="../../Img/Logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300..900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <a class="btn-voltar" href="../../index.html#projeto" aria-label="Voltar para o portfólio"><i class="bi bi-arrow-left-circle-fill"></i></a>
+
+    <main class="interface">
+        <header class="topo">
+            <span class="kicker">Homelab</span>
+            <h1>Meus servidores <span>em casa</span></h1>
+            <p>
+                Duas máquinas aqui de casa rodam os serviços que eu uso no dia a dia e alguns dos meus projetos.
+                Tudo roda em containers Docker e chega na internet pelo Cloudflare Tunnel, sem abrir nenhuma porta no roteador.
+            </p>
+            <div class="topo-links">
+                <a class="botao" href="https://menu.rincon.dev.br/" target="_blank" rel="noopener noreferrer"><i class="bi bi-speedometer2"></i> Painel ao vivo</a>
+                <a class="botao botao-secundario" href="https://github.com/Rincon23/Menu-App" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> Menu App no GitHub</a>
+            </div>
+        </header>
+
+        <!-- Como os pedidos chegam até cada máquina -->
+        <section class="diagrama" aria-label="Como tudo se conecta">
+            <div class="no">
+                <i class="bi bi-globe2"></i>
+                <div><b>Internet</b><span>subdomínios de rincon.dev.br</span></div>
+            </div>
+            <div class="ligacao"></div>
+            <div class="no no-cloudflare">
+                <i class="bi bi-cloud-fill"></i>
+                <div><b>Cloudflare</b><span>DNS, proxy e Tunnel: sem portas abertas no roteador</span></div>
+            </div>
+            <div class="ramos"></div>
+
+            <div class="maquinas">
+                <a class="maquina maquina-orangepi" href="#orangepi">
+                    <div class="maquina-topo">
+                        <i class="bi bi-cpu"></i>
+                        <div><b>Orange Pi</b><span>Debian 12 · 8 núcleos ARM · 4 GB · 24h</span></div>
+                    </div>
+                    <ul>
+                        <li>Vaultwarden</li><li>Capital + PostgreSQL</li><li>Menu App</li><li>Portainer</li><li>Syncthing</li>
+                    </ul>
+                </a>
+
+                <div class="ponte">
+                    <span><i class="bi bi-shield-lock"></i> Tailscale</span>
+                </div>
+
+                <a class="maquina maquina-servidor" href="#servidor">
+                    <div class="maquina-topo">
+                        <i class="bi bi-pc-display"></i>
+                        <div><b>Servidor</b><span>Ubuntu 24.04 · Pentium G3250 · 8 GB</span></div>
+                    </div>
+                    <ul>
+                        <li>Jellyfin</li><li>Nextcloud</li><li>Ollama</li><li>n8n</li><li>Excalidraw</li><li>Sala Privada</li><li>Portainer</li><li>Syncthing</li>
+                    </ul>
+                </a>
+            </div>
+        </section>
+
+        <!-- Orange Pi -->
+        <section class="servidor" id="orangepi">
+            <img class="servidor-capa" src="../../Img/img-projeto/OrangePi-imgre.png" alt="Ilustração do Orange Pi">
+            <div class="servidor-texto">
+                <span class="kicker">Debian 12 · ARM64 · ligado 24h</span>
+                <h2>Orange Pi</h2>
+                <p>
+                    É a máquina que fica ligada o tempo todo. Gasta pouca energia, então cuida do que não pode parar:
+                    o cofre de senhas, o Capital com o banco de dados dele e o Menu App, que acompanha as duas máquinas.
+                </p>
+                <dl class="ficha">
+                    <div><dt>Sistema</dt><dd>Debian 12 (bookworm)</dd></div>
+                    <div><dt>Processador</dt><dd>8 núcleos ARM: 2× Cortex-A76 + 6× Cortex-A55</dd></div>
+                    <div><dt>Memória</dt><dd>4 GB</dd></div>
+                    <div><dt>Armazenamento</dt><dd>SSD NVMe de 128 GB</dd></div>
+                </dl>
+                <ul class="servicos">
+                    <li><i class="bi bi-key-fill"></i><b>Vaultwarden</b><span>Cofre de senhas</span></li>
+                    <li><i class="bi bi-wallet2"></i><b>Capital</b><span>Orçamento doméstico, com PostgreSQL próprio e backup do banco</span></li>
+                    <li><i class="bi bi-speedometer2"></i><b>Menu App</b><span>Painel com status, RAM, disco e terminal</span></li>
+                    <li><i class="bi bi-box-seam"></i><b>Portainer</b><span>Gestão dos containers Docker</span></li>
+                    <li><i class="bi bi-arrow-repeat"></i><b>Syncthing</b><span>Sincronização de arquivos</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Servidor Ubuntu -->
+        <section class="servidor servidor-invertido" id="servidor">
+            <img class="servidor-capa" src="../../Img/img-projeto/ServidorUbuntu-imgre.png" alt="Ilustração do servidor Ubuntu">
+            <div class="servidor-texto">
+                <span class="kicker">Ubuntu 24.04 LTS · PC reaproveitado</span>
+                <h2>Servidor</h2>
+                <p>
+                    Um PC antigo de casa que ganhou uma segunda vida como servidor. Tem mais memória e disco que o Orange Pi,
+                    então fica com mídia, nuvem de arquivos, IA local e automações, além da Sala Privada.
+                </p>
+                <dl class="ficha">
+                    <div><dt>Sistema</dt><dd>Ubuntu Server 24.04 LTS</dd></div>
+                    <div><dt>Processador</dt><dd>Intel Pentium G3250, 2 núcleos a 3,2 GHz</dd></div>
+                    <div><dt>Memória</dt><dd>8 GB</dd></div>
+                    <div><dt>Armazenamento</dt><dd>HD de 320 GB</dd></div>
+                    <div><dt>Placa-mãe</dt><dd>Gigabyte H81M-S3PH</dd></div>
+                </dl>
+                <ul class="servicos">
+                    <li><i class="bi bi-play-btn-fill"></i><b>Jellyfin</b><span>Servidor de mídia</span></li>
+                    <li><i class="bi bi-cloud-arrow-up-fill"></i><b>Nextcloud</b><span>Nuvem de arquivos, com MariaDB e integração ao Google Drive pelo rclone</span></li>
+                    <li><i class="bi bi-cpu-fill"></i><b>Ollama</b><span>Modelos de IA rodando localmente</span></li>
+                    <li><i class="bi bi-diagram-3-fill"></i><b>n8n</b><span>Automação de workflows</span></li>
+                    <li><i class="bi bi-pencil-square"></i><b>Excalidraw</b><span>Quadro branco para desenhar diagramas</span></li>
+                    <li><i class="bi bi-camera-video-fill"></i><b>Sala Privada</b><span>Voz, vídeo e tela com os amigos</span></li>
+                    <li><i class="bi bi-box-seam"></i><b>Portainer</b><span>Gestão dos containers Docker</span></li>
+                    <li><i class="bi bi-arrow-repeat"></i><b>Syncthing</b><span>Sincronização de arquivos</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- O que liga tudo -->
+        <section class="pecas">
+            <h2>O que liga <span>tudo</span></h2>
+            <div class="pecas-grade">
+                <div class="peca">
+                    <i class="bi bi-cloud-fill"></i>
+                    <h3>Cloudflare Tunnel</h3>
+                    <p>Cada máquina roda o cloudflared, que abre um túnel de saída até a Cloudflare. Assim cada serviço ganha um subdomínio de rincon.dev.br com HTTPS, e nenhuma porta fica aberta no roteador.</p>
+                </div>
+                <div class="peca">
+                    <i class="bi bi-shield-lock-fill"></i>
+                    <h3>Tailscale</h3>
+                    <p>Uma rede privada entre as máquinas e os meus aparelhos. É por ela que eu acesso por SSH de qualquer lugar e que o Orange Pi lê as métricas do Servidor.</p>
+                </div>
+                <div class="peca">
+                    <i class="bi bi-box-seam-fill"></i>
+                    <h3>Docker e Portainer</h3>
+                    <p>Cada serviço roda no seu container, com Docker Compose. Para atualizar um projeto meu, basta um push na main e um <code>./update.sh</code> no servidor.</p>
+                </div>
+                <div class="peca">
+                    <i class="bi bi-speedometer2"></i>
+                    <h3>Menu App</h3>
+                    <p>O painel que eu fiz para acompanhar tudo: quais serviços estão no ar, RAM, disco e containers de cada máquina, e um terminal no navegador protegido por senha e 2FA.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

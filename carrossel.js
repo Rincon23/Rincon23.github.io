@@ -43,7 +43,7 @@ function iniciarCarrossel(carrossel) {
             for (let card of originais) {
                 let copia = card.cloneNode(true);
                 copia.setAttribute('aria-hidden', 'true');
-                copia.setAttribute('tabindex', '-1');
+                copia.querySelectorAll('a').forEach((link) => link.setAttribute('tabindex', '-1'));
                 trilho.appendChild(copia);
             }
             copias++;
